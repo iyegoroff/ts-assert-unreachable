@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "es6",
+    "strict": true,
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "removeComments": true,
+    "esModuleInterop": true,
+    "types": []
+  },
+  "exclude": [
+    "node_modules",
+    "test",
+    "dist"
+  ]
+}
