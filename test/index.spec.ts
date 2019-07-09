@@ -1,5 +1,7 @@
 import { exec } from 'child_process'
 
+jest.setTimeout(10000)
+
 test('compiles if switch block is exhaustive', async () => {
   const error = new Promise((resolve) => {
     exec('npm run test:exhaustive-switch-block', (error) => {
