@@ -4,6 +4,7 @@
   "description": "Typescript assert for exhaustive switch blocks",
   "main": "dist/umd/index.js",
   "module": "dist/index.js",
+  "browser": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "preversion": "npm run lint && npm run build && npm t",
