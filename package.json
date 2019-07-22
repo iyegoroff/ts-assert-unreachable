@@ -1,6 +1,6 @@
 {
   "name": "ts-assert-unreachable",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Typescript assert for exhaustive switch blocks",
   "main": "dist/umd/index.js",
   "module": "dist/index.js",
