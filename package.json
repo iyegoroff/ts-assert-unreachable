@@ -48,7 +48,7 @@
     "typescript": "^3.5.2"
   },
   "dependencies": {
-    "tiny-invariant": "^1.0.4"
+    "ts-tiny-invariant": "0.0.1"
   },
   "jest": {
     "globals": {

@@ -8,9 +8,9 @@
 
 Typescript assert for exhaustive switch blocks. Taken from [this](https://stackoverflow.com/a/39419171/4134913) SO answer by Ryan Cavanaugh.
 
-## Getting started
+## Installation
 
-`$ npm i ts-assert-unreachable -S`
+`$ npm i ts-assert-unreachable`
 
 ## Usage
 

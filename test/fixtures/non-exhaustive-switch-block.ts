@@ -3,7 +3,7 @@
  * error TS2345: Argument of type '\"fox\"' is not assignable to parameter of type 'never'
  */
 
-import { assertUnreachable } from '../../src'
+import assertUnreachable from '../../src'
 
 type Animal = 'godzilla' | 'dog' | 'cat' | 'fox'
 
@@ -19,7 +19,7 @@ const animalFace = (animal: Animal): string | undefined => {
       return '🐱'
 
     default:
-      assertUnreachable(animal)
+      return assertUnreachable(animal)
   }
 }
 
