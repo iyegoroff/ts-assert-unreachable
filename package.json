@@ -17,7 +17,8 @@
     "watch": "tsc -p . -w",
     "test": "jest",
     "test:exhaustive-switch-block": "tsc --noEmit --types ' ' test/fixtures/exhaustive-switch-block.ts",
-    "test:non-exhaustive-switch-block": "tsc --noEmit --types ' ' test/fixtures/non-exhaustive-switch-block.ts"
+    "test:non-exhaustive-switch-block": "tsc --noEmit --types ' ' test/fixtures/non-exhaustive-switch-block.ts",
+    "test:just-unreachable": "tsc --noEmit --types ' ' test/fixtures/just-unreachable.ts"
   },
   "keywords": [
     "typescript",

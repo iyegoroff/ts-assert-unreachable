@@ -2,7 +2,7 @@
  * This fixture will be compiled without errors
  */
 
-import assertUnreachable from '../../src'
+import { unreachableCase } from '../../src'
 
 type Animal = 'godzilla' | 'dog' | 'cat' | 'fox'
 
@@ -21,7 +21,7 @@ const animalFace = (animal: Animal): string | undefined => {
       return '🦊'
 
     default:
-      return assertUnreachable(animal)
+      return unreachableCase(animal)
   }
 }
 
