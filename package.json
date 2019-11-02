@@ -15,10 +15,7 @@
     "build": "rm -rf dist && mkdir dist && npm run build:dts && npm run build:umd && npm run build:es6",
     "lint": "tslint -p . && tslint test/**/*",
     "watch": "tsc -p . -w",
-    "test": "jest",
-    "test:exhaustive-switch-block": "tsc --noEmit --types ' ' test/fixtures/exhaustive-switch-block.ts",
-    "test:non-exhaustive-switch-block": "tsc --noEmit --types ' ' test/fixtures/non-exhaustive-switch-block.ts",
-    "test:just-unreachable": "tsc --noEmit --types ' ' test/fixtures/just-unreachable.ts"
+    "test": "jest"
   },
   "keywords": [
     "typescript",
@@ -44,6 +41,7 @@
     "@types/node": "^12.6.1",
     "jest": "^24.8.0",
     "ts-jest": "^24.0.2",
+    "ts-snippet": "^4.2.0",
     "tslint": "^5.18.0",
     "tslint-config-standard": "^8.0.1",
     "typescript": "^3.5.2"

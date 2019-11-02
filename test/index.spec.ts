@@ -1,35 +1,28 @@
-import { exec } from 'child_process'
+import { readFile } from 'fs'
+import { promisify } from 'util'
+import { expecter } from 'ts-snippet'
+
+const read = promisify(readFile)
+const expectSnippet = expecter(undefined, undefined, `${__dirname}/fixtures`)
 
 jest.setTimeout(10000)
 
 test('`unreachable` compiles', async () => {
-  const error = new Promise((resolve) => {
-    exec('npm run test:just-unreachable', (error) => {
-      resolve(error)
-    })
-  })
+  const snippet = await read(`${__dirname}/fixtures/just-unreachable.ts`)
 
-  expect(await error).toBeNull()
+  expectSnippet(snippet.toString()).toSucceed()
 })
 
 test('`unreachableCase` compiles if switch block is exhaustive', async () => {
-  const error = new Promise((resolve) => {
-    exec('npm run test:exhaustive-switch-block', (error) => {
-      resolve(error)
-    })
-  })
+  const snippet = await read(`${__dirname}/fixtures/exhaustive-switch-block.ts`)
 
-  expect(await error).toBeNull()
+  expectSnippet(snippet.toString()).toSucceed()
 })
 
 test('`unreachableCase` fails to compile if switch block is not exhaustive', async () => {
-  const output = new Promise((resolve) => {
-    exec('npm run test:non-exhaustive-switch-block', (_, stdout) => {
-      resolve(stdout)
-    })
-  })
+  const snippet = await read(`${__dirname}/fixtures/non-exhaustive-switch-block.ts`)
 
-  expect(await output).toMatch(
-    /error TS2345: Argument of type '\"fox\"' is not assignable to parameter of type 'never'/
+  expectSnippet(snippet.toString()).toFail(
+    /Argument of type '\"fox\"' is not assignable to parameter of type 'never'/
   )
 })
